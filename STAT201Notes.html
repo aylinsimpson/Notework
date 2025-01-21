@@ -88,9 +88,28 @@
             background: none;
             border: none;
         }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body>
+    <!-- Back Arrow -->
+    <a href="MATHCourses.html">
+        <img src="WhiteBackArrow.png" alt="Back" class="back-arrow">
+    </a>
+
     <h1>STAT 201 Notes</h1>
 
     <!-- Buttons for Chapters -->
