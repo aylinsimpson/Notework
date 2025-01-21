@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'cambria', arial;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .banner {
+            width: 100%;
+            background: #010000;
+            padding: 10px 0 20px;
+            margin: 0;
+            position: relative;
+            
+        }
+
+        .logo-container {
+            position: relative;
+            width: 300px;
+            height: 220px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .banner-text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+        }
+
+        .search-input {
+            padding: 8px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            background: transparent;
+            color: #ffffff;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-input::placeholder {
+            color: #ffffff;
+            opacity: 0.7;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .card {
+            aspect-ratio: 1;
+            background: #010000;
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 180px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 60%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #ffffff;
+            margin-top: 5px;
+            min-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+        }
+
+        .text-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .text-container p{
+            margin: 0;
+
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .banner-text {
+                font-size: 1em;
+            }
+            .search-container {
+                width: 100%;
+                margin-right: 0;
+            }
+            .search-input {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search courses..." onkeyup="searchCourses()">
+        </div>
+        <div class="logo-container">
+            <img src="NoteworkLogo.png" alt="Logo">
+        </div>
+        <div class="text-container">
+            <p>Drexel University's hub for course notes.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Row 1 -->
+            <a href="page1.html">
+                <div class="card">
+                    <img src="BlueNotebook.png" alt="Item 1">
+                    <div class="card-text">Browse Math Courses</div>
+                </div>
+            </a>
+            <a href="page2.html">
+                <div class="card">
+                    <img src="PinkNotebook.png" alt="Item 2">
+                    <div class="card-text">Browse Informatics Courses</div>
+                </div>
+            </a>
+            <a href="page3.html">
+                <div class="card">
+                    <img src="GreenNotebook.png" alt="Item 3">
+                    <div class="card-text">Browse Programming Courses</div>
+                </div>
+            </a>
+            <!-- Row 2 -->
+            <a href="page4.html">
+                <div class="card">
+                    <img src="YellowNotebook.png" alt="Item 4">
+                    <div class="card-text">Browse Other Courses</div>
+                </div>
+            </a>
+            <a href="page5.html">
+                <div class="card">
+                    <img src="LilacNotebook.png" alt="Item 5">
+                    <div class="card-text">Item 5</div>
+                </div>
+            </a>
+            <a href="page6.html">
+                <div class="card">
+                    <img src="OrangeNotebook.png" alt="Item 6">
+                    <div class="card-text">Item 6</div>
+                </div>
+            </a>
+            <!-- Row 3 -->
+            <a href="page7.html">
+                <div class="card">
+                    <img src="DarkBlueNotebook.png" alt="Item 7">
+                    <div class="card-text">Item 7</div>
+                </div>
+            </a>
+            <a href="page8.html">
+                <div class="card">
+                    <img src="WhiteNotebook.png" alt="Item 8">
+                    <div class="card-text">Item 8</div>
+                </div>
+            </a>
+            <a href="page9.html">
+                <div class="card">
+                    <img src="RedNotebook.png" alt="Item 9">
+                    <div class="card-text">Item 9</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function searchCourses() {
+            const searchInput = document.querySelector('.search-input');
+            const searchText = searchInput.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const cardText = card.querySelector('.card-text').textContent.toLowerCase();
+                const shouldShow = cardText.includes(searchText);
+                card.closest('a').style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
