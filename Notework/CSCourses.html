@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'cambria', arial;
+            background-color: #000000;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .card {
+            aspect-ratio: 1;
+            background: #010000;
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 180px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 60%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #ffffff;
+            margin-top: 5px;
+            min-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Arrow -->
+    <a href="index.html">
+        <img src="WhiteBackArrow.png" alt="Back Arrow" class="back-arrow">
+    </a>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Row 1 -->
+            <a href="page1.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 1">
+                    <div class="card-text">CS265</div>
+                </div>
+            </a>
+            <a href="page2.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 2">
+                    <div class="card-text">CS</div>
+                </div>
+            </a>
+            <a href="page3.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 3">
+                    <div class="card-text">CS</div>
+                </div>
+            </a>
+            <!-- Row 2 -->
+            <a href="page4.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 4">
+                    <div class="card-text">Item 4</div>
+                </div>
+            </a>
+            <a href="page5.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 5">
+                    <div class="card-text">Item 5</div>
+                </div>
+            </a>
+            <a href="page6.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 6">
+                    <div class="card-text">Item 6</div>
+                </div>
+            </a>
+            <!-- Row 3 -->
+            <a href="page7.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 7">
+                    <div class="card-text">Item 7</div>
+                </div>
+            </a>
+            <a href="page8.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 8">
+                    <div class="card-text">Item 8</div>
+                </div>
+            </a>
+            <a href="page9.html">
+                <div class="card">
+                    <img src="YellowFolder.png" alt="Item 9">
+                    <div class="card-text">Item 9</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

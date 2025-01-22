@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATH 180 Notes</title>
+    <style>
+        body {
+            font-family: 'Abril Flatface', 'Cambria', serif;
+            background-color: #000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .chapter-button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #000000;
+            color: #e3cff9;
+            font-size: 1.2em;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .chapter-button:hover {
+            background-color: #444;
+        }
+
+        .dropdown-content {
+            display: none;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .dropdown-content img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid #444;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .dropdown-content img:hover {
+            transform: scale(1.1);
+            border-color: #e3cff9;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 5px solid #e3cff9;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            color: #e3cff9;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .back-arrow:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Arrow -->
+    <a href="MATHCourses.html">
+        <img src="WhiteBackArrow.png" alt="Back" class="back-arrow">
+    </a>
+
+    <h1>MATH 180 Notes</h1>
+
+    <!-- Buttons for Chapters -->
+    <button class="chapter-button" onclick="toggleDropdown(1)">Chapter 1</button>
+    <div class="dropdown-content" id="chapter1">
+        <img src="MATH180CH1P1.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(2)">Chapter 2</button>
+    <div class="dropdown-content" id="chapter2">
+        <img src="chapter2-page1.png" alt="Chapter 2 Page 1" onclick="showLightbox(this)">
+        <img src="chapter2-page2.png" alt="Chapter 2 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(3)">Chapter 3</button>
+    <div class="dropdown-content" id="chapter3">
+        <img src="chapter3-page1.png" alt="Chapter 3 Page 1" onclick="showLightbox(this)">
+        <img src="chapter3-page2.png" alt="Chapter 3 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(4)">Chapter 4</button>
+    <div class="dropdown-content" id="chapter4">
+        <img src="chapter4-page1.png" alt="Chapter 4 Page 1" onclick="showLightbox(this)">
+        <img src="chapter4-page2.png" alt="Chapter 4 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(5)">Chapter 5</button>
+    <div class="dropdown-content" id="chapter5">
+        <img src="chapter5-page1.png" alt="Chapter 5 Page 1" onclick="showLightbox(this)">
+        <img src="chapter5-page2.png" alt="Chapter 5 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(6)">Chapter 6</button>
+    <div class="dropdown-content" id="chapter6">
+        <img src="chapter6-page1.png" alt="Chapter 6 Page 1" onclick="showLightbox(this)">
+        <img src="chapter6-page2.png" alt="Chapter 6 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(7)">Chapter 7</button>
+    <div class="dropdown-content" id="chapter7">
+        <img src="chapter7-page1.png" alt="Chapter 7 Page 1" onclick="showLightbox(this)">
+        <img src="chapter7-page2.png" alt="Chapter 7 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(8)">Chapter 8</button>
+    <div class="dropdown-content" id="chapter8">
+        <img src="chapter8-page1.png" alt="Chapter 8 Page 1" onclick="showLightbox(this)">
+        <img src="chapter8-page2.png" alt="Chapter 8 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(9)">Chapter 9</button>
+    <div class="dropdown-content" id="chapter9">
+        <img src="chapter9-page1.png" alt="Chapter 9 Page 1" onclick="showLightbox(this)">
+        <img src="chapter9-page2.png" alt="Chapter 9 Page 2" onclick="showLightbox(this)">
+    </div>
+
+    <button class="chapter-button" onclick="toggleDropdown(10)">Chapter 10</button>
+    <div class="dropdown-content" id="chapter10">
+        <img src="chapter10-page1.png" alt="Chapter 10 Page 1" onclick="showLightbox(this)">
+        <img src="chapter10-page2.png" alt="Chapter 10 Page 2" onclick="showLightbox(this)">
+    </div>
+    
+    <!-- Lightbox for Enlarged Image -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" onclick="hideLightbox()">X</button>
+        <img id="lightbox-img" src="" alt="Enlarged Note">
+    </div>
+
+    <script>
+        // Function to toggle dropdown visibility
+        function toggleDropdown(chapterNumber) {
+            const dropdown = document.getElementById(`chapter${chapterNumber}`);
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Function to show the lightbox
+        function showLightbox(image) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = image.src;
+            lightbox.style.display = 'flex';
+        }
+
+        // Function to hide the lightbox
+        function hideLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
