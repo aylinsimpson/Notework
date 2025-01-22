@@ -102,9 +102,79 @@
         .back-arrow:hover {
             transform: translateY(-5px);
         }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3em;
+            color: #e3cff9;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 11;
+        }
+
+        .nav-btn.left {
+            left: 20px;
+        }
+
+        .nav-btn.right {
+            right: 20px;
+        }
+        
+        .chapter-container {
+            position: relative;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .chapter-button {
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            background-color: #000000;
+            color: #e3cff9;
+            font-size: 1.2em;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .chapter-button:hover {
+            background-color: #444;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn .arrow {
+            font-size: 2em;
+            color: #e3cff9;
+        }
+
+        .download-btn .line {
+            width: 20px;
+            height: 2px;
+            background-color: #e3cff9;
+            border-radius: 2px;
+        }
+
+
     </style>
 </head>
 <body>
+
     <!-- Back Arrow -->
     <a href="MATHCourses.html">
         <img src="WhiteBackArrow.png" alt="Back" class="back-arrow">
@@ -113,73 +183,144 @@
     <h1>STAT 201 Notes</h1>
 
     <!-- Buttons for Chapters -->
-    <button class="chapter-button" onclick="toggleDropdown(1)">Chapter 1</button>
-    <div class="dropdown-content" id="chapter1">
-        <img src="STAT201Ch1P1.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(1)">Chapter 1</button>
+        <div class="dropdown-content" id="chapter1">
+            <img src="STAT201Ch1P1.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+        </div>
+        <div class="download-btn" onclick="downloadChapter(1)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
+    </div>  
+
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(2)">Chapter 2</button>
+        <div class="dropdown-content" id="chapter2">
+            <img src="STAT201Ch2P1.png" alt="Chapter 2 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch2P2.png" alt="Chapter 2 Page 2" onclick="showLightbox(this)">
+
+        </div>
+        <div class="download-btn" onclick="downloadChapter(2)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(2)">Chapter 2</button>
-    <div class="dropdown-content" id="chapter2">
-        <img src="STAT201Ch2P1.png" alt="Chapter 2 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch2P2.png" alt="Chapter 2 Page 2" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(3)">Chapter 3</button>
+        <div class="dropdown-content" id="chapter3">
+            <img src="STAT201Ch3P1.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch3P2.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch3P3.png" alt="Chapter 1 Page 1" onclick="showLightbox(this)">
+        </div>
+        <div class="download-btn" onclick="downloadChapter(3)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(3)">Chapter 3</button>
-    <div class="dropdown-content" id="chapter3">
-        <img src="STAT201Ch3P1.png" alt="Chapter 3 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch3P2.png" alt="Chapter 3 Page 2" onclick="showLightbox(this)">
-        <img src="STAT201Ch3P3.png" alt="Chapter 3 Page 2" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(4)">Chapter 4</button>
+        <div class="dropdown-content" id="chapter4">
+            <img src="STAT201Ch4P1.png" alt="Chapter 4 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch4P2.png" alt="Chapter 4 Page 2" onclick="showLightbox(this)">
 
+        </div>
+        <div class="download-btn" onclick="downloadChapter(4)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(4)">Chapter 4</button>
-    <div class="dropdown-content" id="chapter4">
-        <img src="STAT201Ch4P1.png" alt="Chapter 4 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch4P2.png" alt="Chapter 4 Page 2" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(5)">Chapter 5</button>
+        <div class="dropdown-content" id="chapter5">
+            <img src="STAT201Ch5P1.png" alt="Chapter 5 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch5P2.png" alt="Chapter 5 Page 2" onclick="showLightbox(this)">
+
+        </div>
+        <div class="download-btn" onclick="downloadChapter(5)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(5)">Chapter 5</button>
-    <div class="dropdown-content" id="chapter5">
-        <img src="STAT201Ch5P1.png" alt="Chapter 5 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch5P2.png" alt="Chapter 5 Page 2" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(6)">Chapter 6</button>
+        <div class="dropdown-content" id="chapter6">
+            <img src="STAT201Ch6P1.png" alt="Chapter 6 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch6P2.png" alt="Chapter 6 Page 2" onclick="showLightbox(this)">
+            <img src="STAT201Ch6P3.png" alt="Chapter 6 Page 3" onclick="showLightbox(this)">
+            <img src="STAT201Ch6P4.png" alt="Chapter 6 Page 4" onclick="showLightbox(this)">
+
+    
+        </div>
+        <div class="download-btn" onclick="downloadChapter(6)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(6)">Chapter 6</button>
-    <div class="dropdown-content" id="chapter6">
-        <img src="STAT201Ch6P1.png" alt="Chapter 6 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch6P2.png" alt="Chapter 6 Page 2" onclick="showLightbox(this)">
-        <img src="STAT201Ch6P3.png" alt="Chapter 6 Page 3" onclick="showLightbox(this)">
-        <img src="STAT201Ch6P4.png" alt="Chapter 6 Page 4" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(7)">Chapter 7</button>
+        <div class="dropdown-content" id="chapter7">
+            <img src="STAT201Ch7P1.png" alt="Chapter 7 Page 1" onclick="showLightbox(this)">
+        </div>
+        <div class="download-btn" onclick="downloadChapter(7)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(7)">Chapter 7</button>
-    <div class="dropdown-content" id="chapter7">
-        <img src="STAT201Ch7P1.png" alt="Chapter 7 Page 1" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(8)">Chapter 8</button>
+        <div class="dropdown-content" id="chapter8">
+            <img src="STAT201Ch8P1.png" alt="Chapter 8 Page 1" onclick="showLightbox(this)">
+            <img src="STAT201Ch8P2.png" alt="Chapter 8 Page 2" onclick="showLightbox(this)">
+
+        </div>
+        <div class="download-btn" onclick="downloadChapter(8)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(8)">Chapter 8</button>
-    <div class="dropdown-content" id="chapter8">
-        <img src="STAT201Ch8P1.png" alt="Chapter 8 Page 1" onclick="showLightbox(this)">
-        <img src="STAT201Ch8P2.png" alt="Chapter 8 Page 2" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(9)">Chapter 9</button>
+        <div class="dropdown-content" id="chapter9">
+            <img src="STAT201Ch9.png" alt="Chapter 9 Page 1" onclick="showLightbox(this)">
+        </div>
+        <div class="download-btn" onclick="downloadChapter(1)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
 
-    <button class="chapter-button" onclick="toggleDropdown(9)">Chapter 9</button>
-    <div class="dropdown-content" id="chapter9">
-        <img src="STAT201Chapter9.png" alt="Chapter 9 Page 1" onclick="showLightbox(this)">
-    </div>
-
-    <button class="chapter-button" onclick="toggleDropdown(10)">Chapter 10</button>
-    <div class="dropdown-content" id="chapter10">
-        <img src="STAT201Chapter12.png" alt="Chapter 10 Page 1" onclick="showLightbox(this)">
+    <div class="chapter-container">
+        <button class="chapter-button" onclick="toggleDropdown(1)">Chapter 10</button>
+        <div class="dropdown-content" id="chapter10">
+            <img src="STAT201Chapter12.png" alt="Chapter 10 Page 1" onclick="showLightbox(this)">
+        </div>
+        <div class="download-btn" onclick="downloadChapter(10)">
+            <span class="arrow">&#x2193;</span>
+            <span class="line"></span>
+        </div>
     </div>
     
     <!-- Lightbox for Enlarged Image -->
     <div class="lightbox" id="lightbox">
         <button class="close-btn" onclick="hideLightbox()">X</button>
+        <button class="nav-btn left" onclick="navigateImage(-1)">&#10094;</button>
         <img id="lightbox-img" src="" alt="Enlarged Note">
+        <button class="nav-btn right" onclick="navigateImage(1)">&#10095;</button>
     </div>
 
     <script>
+
+        let images = [];
+        let currentIndex = 0;
+
         // Function to toggle dropdown visibility
         function toggleDropdown(chapterNumber) {
             const dropdown = document.getElementById(`chapter${chapterNumber}`);
@@ -188,6 +329,8 @@
 
         // Function to show the lightbox
         function showLightbox(image) {
+            images = Array.from(document.querySelectorAll('.dropdown-content img'));
+            currentIndex = images.indexOf(image);
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             lightboxImg.src = image.src;
@@ -199,6 +342,19 @@
             const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'none';
         }
+
+        function navigateImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length; // Wrap-around navigation
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = images[currentIndex].src;
+        }   
+        
+        function downloadChapter(chapterNumber) {
+    // Implement the download logic for each chapter here
+            alert('Download for Chapter ' + chapterNumber);
+        }
+
+
     </script>
 </body>
 </html>
